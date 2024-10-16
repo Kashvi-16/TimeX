@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time-X School Management System</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Time-X School Management System</h1>
+    </header>
+
+    <nav>
+        <ul>
+            {% if user.is_authenticated %}
+                {% if user.user_type == 'admin' %}
+                    <li><a href="{% url 'admin_dashboard' %}">Admin Dashboard</a></li>
+                {% elif user.user_type == 'teacher' %}
+                    <li><a href="{% url 'teacher_dashboard' %}">Teacher Dashboard</a></li>
+                {% elif user.user_type == 'student' %}
+                    <li><a href="{% url 'student_dashboard' %}">Student Dashboard</a></li>
+                {% endif %}
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Time-X School Management System</p>
+    </footer>
+</body>
+</html>
+

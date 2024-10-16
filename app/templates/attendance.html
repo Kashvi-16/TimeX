@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="attendance-container">
+    <h2>Mark Attendance</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Mark Attendance Using Facial Recognition</button>
+    </form>
+</div>
+{% endblock %}

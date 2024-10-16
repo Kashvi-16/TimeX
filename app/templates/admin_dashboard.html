@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="dashboard">
+    <h2>Admin Dashboard</h2>
+    <ul>
+        <li><a href="{% url 'generate_timetable' %}">Generate Timetable</a></li>
+        <li><a href="{% url 'view_teacher_attendance' %}">View Teacher Attendance</a></li>
+        <li><a href="{% url 'manage_teacher_substitution' %}">Manage Teacher Substitution</a></li>
+        <li><a href="{% url 'view_result' %}">View Student Results</a></li>
+    </ul>
+</div>
+{% endblock %}
+

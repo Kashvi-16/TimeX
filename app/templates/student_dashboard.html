@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="dashboard">
+    <h2>Student Dashboard</h2>
+    <ul>
+        <li><a href="{% url 'view_timetable' %}">View Timetable</a></li>
+        <li><a href="{% url 'view_teacher_substitution' %}">View Teacher Substitution</a></li>
+        <li><a href="{% url 'view_student_result' %}">View Your Results</a></li>
+    </ul>
+</div>
+{% endblock %}
